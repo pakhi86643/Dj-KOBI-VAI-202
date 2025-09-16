@@ -67,7 +67,7 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
  const imgLinks = [
  "https://i.imgur.com/JpIkDad.jpeg",
  "https://i.imgur.com/jAZlebM.jpeg",
- "htt/wu",
+ "https://i.imgur.com/JpIkDad.jpeg",
  "https:"
  ];
 
