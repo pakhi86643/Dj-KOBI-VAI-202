@@ -46,7 +46,7 @@ module.exports.run = async function ({ api, event, args, Users, Threads }) {
 │
 ├─ 👑 𝗡𝗮𝗺𝗲 : 𝐌𝐑 𝐌𝐎𝐍𝐈𝐑 𝐊𝐇𝐀𝐍
 ├─ 📲 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 :
-│ facebook.https://www.facebook.com/kabi.kaji.najarula.isalama.195620
+│ facebook. https://www.facebook.com/kabi.kaji.najarula.isalama.195620
 ├─ 💌 𝗠𝗲𝘀𝘀𝗲𝗻𝗴𝗲𝗿 :
 │ m.me/100090230637952
 ├─ 📞 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 :
