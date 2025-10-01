@@ -20,9 +20,9 @@ module.exports.handleEvent = async function ({ api, event, Users }) {
 
   const responses = {
     "miss you": "অরেক বেডারে Miss না করে xan মেয়ে হলে বস 𝗞𝗼𝗯𝗶 রে হাঙ্গা করো😶👻😘",
-    "kiss de": "কিস দিস না তোর মুখে দূর গন্ধ কয়দিন ধরে দাঁত ব্রাশ করিস নাই🤬",
+    "বট তোর বস কে": "আমার বস এক মাত্র কবি, বসের আইডি লিং https://www.facebook.com/kabi.kaji.najarula.isalama.195620 ",
     "👍": "হাত মারো কেন সোনা। কথা বলো..!🐸🤣👍⛏️",
-    "help": "Prefix de sala",
+    "কবি": "কবি বস এখন বিজি তার সাথে যোগাযোগ করতে চাইলে https://www.facebook.com/kabi.kaji.najarula.isalama.195620 ",
     "hi": "এত হাই-হ্যালো কর ক্যান প্রিও..!😜🫵",
     "bc": "SAME TO YOU😊",
     "pro": "Khud k0o KYa LeGend SmJhTi Hai 😂",
@@ -42,9 +42,9 @@ module.exports.handleEvent = async function ({ api, event, Users }) {
     "ami tor boss": "আমার বস কবি বসের আইডি লিং https://www.facebook.com/kabi.kaji.najarula.isalama.195620 ..?☺️",
     "bot er baccha": "আমার বাচ্চা তো তোমার গার্লফ্রেন্ডের পেটে..!!🌚⛏️",
     "tor nam ki": "MY NAME IS ─꯭─⃝‌‌𝗞𝗼𝗯𝗶 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭💖",
-    "pic de": "এন থেকে সর দুরে গিয়া মর😒",
+    "কবি কে": "কবি আমার বস, বসের আইডি লিং https://www.facebook.com/kabi.kaji.najarula.isalama.195620😒",
     "cudi": "এত চোদা চুদি করস কেনো..!🥱🌝🌚",
-    "bal": "রাগ করে না সোনা পাখি 🥰",
+    "kobi k": "কবি আমার বসের নাম বসের আইডি লিং https://www.facebook.com/kabi.kaji.najarula.isalama.195620 🥰",
     "heda": "এতো রাগ শরীরের জন্য ভালো না 🥰",
     "boda": "ভাই তুই এত হাসিস না..!🌚🤣",
     "love you": "ভালোবাসা নামক আবলামী করতে চাইলে কবি বসের ইনবক্সে জাও বসের আইডি লিং 😘 https://www.facebook.com/kabi.kaji.najarula.isalama.195620 ",
