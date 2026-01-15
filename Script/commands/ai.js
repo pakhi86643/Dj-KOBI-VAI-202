@@ -1,44 +1,76 @@
 const axios = require("axios");
-module.exports.config = {
+
+module.exports = {
+  config: {
     name: "ai",
     version: "1.0.0",
+    credits: "SHAHADAT SAHU", //please don't change credit
+    cooldowns: 0,
     hasPermssion: 0,
-    credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-    description: "BlackBoxAi by Priyansh",
-    commandCategory: "ai",
-    usages: "[ask]",
-    cooldowns: 2,
-    dependecies: {
-        "axios": "1.4.0"
+    usePrefix: true
+  },
+
+  run: async ({ api, args, event }) => {
+    const threadID = event.threadID;
+    const messageID = event.messageID;
+    const input = args.join(" ").trim();
+
+    let SAHU;
+    try {
+      SAHU = (
+        await axios.get(
+          "https://raw.githubusercontent.com/shahadat-sahu/SAHU-API/refs/heads/main/SAHU-API.json"
+        )
+      ).data;
+    } catch {
+      return api.sendMessage(
+        "❌ Failed to load AI configuration.",
+        threadID,
+        messageID
+      );
     }
-};
 
-module.exports.run = async function ({ api, event, args, Users }) {
+    const AI_API = SAHU.ai;
 
-  const { threadID, messageID } = event;
+    const askAI = async (text) => {
+      try {
+        const res = await axios.get(AI_API + encodeURIComponent(text));
+        return (
+          res.data?.answer ||
+          res.data?.response ||
+          res.data?.reply ||
+          "⚠️ No response from AI."
+        );
+      } catch {
+        return "❌ AI request failed.";
+      }
+    };
 
-  const query = encodeURIComponent(args.join(" "));
+    const reactDone = () =>
+      api.setMessageReaction("✅", messageID, () => {}, true);
 
-  var name = await Users.getNameUser(event.senderID);
+    if (
+      event.type === "message_reply" &&
+      event.messageReply.body &&
+      !input
+    ) {
+      api.setMessageReaction("⏳", messageID, () => {}, true);
+      const reply = await askAI(event.messageReply.body);
+      await api.sendMessage(reply, threadID);
+      return reactDone();
+    }
 
-  if (!args[0]) return api.sendMessage("Please type a message...", threadID, messageID );
-  
-  api.sendMessage("Searching for an answer, please wait...", threadID, messageID);
+    if (!input) {
+      return api.sendMessage(
+        "🤖 AI Usage Guide\n\n• Ask a question: /ai your question\n• Reply to any message and type /ai\n• Reply without a question to get an automatic answer",
+        threadID,
+        messageID
+      );
+    }
 
-  try{
-
-    api.setMessageReaction("⌛", event.messageID, () => { }, true);
-
-    const res = await axios.get(`https://blackboxai-tlh1.onrender.com/api/blackboxai?query=${encodeURIComponent(query)}`);
-
-    const data = res.data.priyansh;
-
-    api.sendMessage(data, event.threadID, event.messageID);
-
-    api.setMessageReaction("✅", event.messageID, () => { }, true);
-}
-  catch (error) {
-    console.error('Error fetching package.json:', error);
-  api.sendMessage("An error occurred while fetching data. Please try again later.", event.threadID, event.messageID);
+    api.setMessageReaction("⏳", messageID, () => {}, true);
+    const reply = await askAI(input);
+    await api.sendMessage(reply, threadID);
+    return reactDone();
   }
 };
