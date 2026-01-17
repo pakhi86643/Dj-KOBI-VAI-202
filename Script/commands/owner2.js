@@ -28,7 +28,7 @@ module.exports.run = async function ({ api, event }) {
  body:
 `🌟 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 🌟
 
-👑 𝗡𝗮𝗺𝗲: Shahadat Islam😘
+👑 𝗡𝗮𝗺𝗲: মোঃ মনিরুজ্জামান খান😘
 😻 𝗔𝗱𝗱𝗿𝗲𝘀𝘀: মেয়েদের মনে🙈
 💼 𝗣𝗿𝗼𝗳𝗲𝘀𝘀𝗶𝗼𝗻: মেয়েদের মন জয় করা😍
 
@@ -40,7 +40,7 @@ module.exports.run = async function ({ api, event }) {
 🎵 𝗧𝗶𝗸𝗧𝗼𝗸: সরি আমি প্রতিবন্ধী না🥱
 👻 𝗦𝗻𝗮𝗽𝗰𝗵𝗮𝘁: তোদের মতো কালা নাকি ফিল্টার লাগামু🤭
 
-🤖 𝗕𝗢𝗧 𝗕𝗬: ─꯭─⃝‌‌𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭
+🤖 𝗕𝗢𝗧 𝗕𝗬: ─꯭─⃝‌‌Kobi 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭
 `,
  attachment: fs.createReadStream(path)
  }, event.threadID, () => fs.unlinkSync(path));
